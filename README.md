@@ -112,51 +112,48 @@ A developer pushes code to **GitHub**. A **webhook** triggers **Jenkins**, which
 
 ## 🏗️ Architecture
 
+The project has **two simple parts**: an automated **delivery pipeline** that ships the code, and a **Kubernetes cluster** that runs and monitors the application.
+
+### 1️⃣ Delivery Pipeline (CI/CD)
+
 ```mermaid
-flowchart TD
-    DEV([👨‍💻 Developer]) -->|git push| GH[(🐙 GitHub)]
-    GH -->|Webhook| JC[🧑‍🔧 Jenkins Controller]
-    JC -->|SSH key auth| JA[🖥️ Jenkins Agent]
-
-    JA -->|1. docker build| IMG[🐳 Docker Image]
-    IMG -->|2. docker push| REG[(📦 Docker Hub)]
-    JA -->|3. kubectl apply| KIND
-
-    subgraph KIND[☸️ Kind Cluster]
-        direction TB
-        subgraph APP[📁 Application Namespace]
-            FS[Flask Service] --> FD[🐍 Flask Deployment]
-            FD --> MS[MySQL Service]
-            MS --> MD[🐬 MySQL Deployment]
-            MD --> PVC[(PVC)]
-            SEC[🔐 MySQL Secret] -.-> MD
-            SEC -.-> FD
-        end
-        subgraph MON[📊 monitoring Namespace]
-            PR[🔥 Prometheus] --> GR[📈 Grafana]
-        end
-    end
-
-    REG -.->|image pull| FD
-    PR -.->|scrapes metrics| APP
-    USER([🌍 Browser]) --> FS
-    USER --> GR
+flowchart LR
+    A[Developer<br/>pushes code] --> B[GitHub<br/>stores code]
+    B -->|Webhook| C[Jenkins<br/>builds and tests]
+    C --> D[Docker Hub<br/>stores image]
+    D --> E[Kubernetes<br/>runs application]
 ```
 
-<details>
-<summary><b>📋 Tier breakdown (click to expand)</b></summary>
+### 2️⃣ Application and Monitoring (inside Kubernetes)
 
-<br>
+```mermaid
+flowchart LR
+    subgraph APP[Application Namespace]
+        direction LR
+        F[Flask Web App] --> M[(MySQL Database)]
+    end
+    subgraph MON[Monitoring Namespace]
+        direction LR
+        P[Prometheus<br/>collects metrics] --> G[Grafana<br/>shows dashboards]
+    end
+    U[User] --> F
+    P -.->|reads metrics from| APP
+    V[DevOps Engineer] --> G
+```
 
-| Tier | Technology | Kubernetes Resources |
-|------|------------|----------------------|
-| 🎨 Presentation | HTML templates + CSS served by Flask | Part of the Flask Deployment |
-| ⚙️ Application | Python Flask | Deployment, Service |
-| 🗄️ Database | MySQL | Deployment, Service, Secret, PVC |
-| 📊 Monitoring | Prometheus + Grafana | Helm release in `monitoring` namespace |
-| 🔁 CI/CD | Jenkins + GitHub Webhook | Runs outside the cluster on controller and agent |
+### 📝 How It Works
 
-</details>
+| Step | What happens | Tool |
+|:----:|--------------|------|
+| 1 | A developer pushes code to the repository | **GitHub** |
+| 2 | GitHub automatically notifies Jenkins (no manual trigger) | **Webhook** |
+| 3 | Jenkins builds a Docker image of the application | **Jenkins + Docker** |
+| 4 | The image is uploaded to a registry | **Docker Hub** |
+| 5 | The new version is deployed and verified on the cluster | **Kubernetes (Kind)** |
+| 6 | Users open the updated application in the browser | **Flask + MySQL** |
+| 7 | Cluster health is collected and displayed on dashboards | **Prometheus + Grafana** |
+
+> **In short:** push code → the pipeline runs by itself → the new version goes live → dashboards show the cluster is healthy.
 
 ---
 
