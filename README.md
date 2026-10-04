@@ -72,18 +72,18 @@
   <tr>
     <td align="center" width="50%">
       <img src="docs/grafana-dashboard.png" alt="monitoring namespace"><br>
-      <b>1. <code>monitoring</code> Namespace: Pods, Deployments, Services</b>
+      <b>1. Grafana Dashboard</b>
     </td>
     <td align="center" width="50%">
       <img src="docs/grafana-dashboard1.png" alt="Prometheus targets"><br>
-      <b>2. Prometheus Collecting Metrics</b>
+      <b>2. Pods</b>
     </td>
   </tr>
 </table>
 
 <div align="center">
   <img src="docs/monitoring-console.png" alt="Grafana Kubernetes dashboard" width="90%">
-  <p><b>3. Grafana Kubernetes Dashboard</b></p>
+  <p><b>3. Monitoring Dashboard</b></p>
 </div>
 
 ---
@@ -646,10 +646,10 @@ kind delete cluster --name $CLUSTER_NAME
 
 ## 👨‍💻 Author
 
-**Your Name**
+**Mayur Gopal Saitwal**
 
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/your-username)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/your-profile)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/MayurSaitwal)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/mayursaitwal)
 
 <br>
 
