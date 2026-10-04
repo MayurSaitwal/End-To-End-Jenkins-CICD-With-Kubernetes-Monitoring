@@ -43,21 +43,21 @@
   <tr>
     <td align="center" width="50%">
       <img src="docs/jemkins-agent.png" alt="GitHub webhook"><br>
-      <b>1. GitHub Webhook Triggers the Build</b>
+      <b>1. Jenkins Stages</b>
     </td>
     <td align="center" width="50%">
       <img src="docs/pipeline-console.png" alt="Jenkins agent"><br>
-      <b>2. Jenkins Agent Connected via SSH Keys</b>
+      <b>2. Jenkins Pipeline Console</b>
     </td>
   </tr>
   <tr>
     <td align="center" width="50%">
       <img src="docs/k8s-console.png" alt="Jenkins pipeline"><br>
-      <b>3. Pipeline Stages: Build, Push, Deploy, Verify</b>
+      <b>3. Kubernetes Console</b>
     </td>
     <td align="center" width="50%">
       <img src="docs/live-ui.png" alt="Jenkins console output"><br>
-      <b>4. Console Output: Build Successful</b>
+      <b>4. Live UI</b>
     </td>
   </tr>
 </table>
