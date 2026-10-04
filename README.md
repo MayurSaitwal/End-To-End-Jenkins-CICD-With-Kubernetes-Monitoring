@@ -60,16 +60,6 @@
       <b>4. Console Output: Build Successful</b>
     </td>
   </tr>
-  <tr>
-    <td align="center" width="50%">
-      <img src="docs/screenshots/kubectl-resources.png" alt="kubectl resources"><br>
-      <b>5. Pods, Services, Secret and PVC Running</b>
-    </td>
-    <td align="center" width="50%">
-      <img src="docs/screenshots/ui-before-after.png" alt="UI before and after"><br>
-      <b>6. UI Updated Automatically After a Push</b>
-    </td>
-  </tr>
 </table>
 
 ---
