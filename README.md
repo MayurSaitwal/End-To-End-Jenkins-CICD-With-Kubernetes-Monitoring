@@ -81,11 +81,11 @@
 <table>
   <tr>
     <td align="center" width="50%">
-      <img src="docs/grafana-dashboard" alt="monitoring namespace"><br>
+      <img src="docs/grafana-dashboard.png" alt="monitoring namespace"><br>
       <b>1. <code>monitoring</code> Namespace: Pods, Deployments, Services</b>
     </td>
     <td align="center" width="50%">
-      <img src="docs/grafana-dashboard1" alt="Prometheus targets"><br>
+      <img src="docs/grafana-dashboard1.png" alt="Prometheus targets"><br>
       <b>2. Prometheus Collecting Metrics</b>
     </td>
   </tr>
