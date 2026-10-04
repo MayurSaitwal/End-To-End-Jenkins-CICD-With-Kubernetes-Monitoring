@@ -81,18 +81,18 @@
 <table>
   <tr>
     <td align="center" width="50%">
-      <img src="docs/screenshots/monitoring-namespace.png" alt="monitoring namespace"><br>
+      <img src="docs/grafana-dashboard" alt="monitoring namespace"><br>
       <b>1. <code>monitoring</code> Namespace: Pods, Deployments, Services</b>
     </td>
     <td align="center" width="50%">
-      <img src="docs/screenshots/prometheus.png" alt="Prometheus targets"><br>
+      <img src="docs/grafana-dashboard1" alt="Prometheus targets"><br>
       <b>2. Prometheus Collecting Metrics</b>
     </td>
   </tr>
 </table>
 
 <div align="center">
-  <img src="docs/screenshots/grafana-dashboard.png" alt="Grafana Kubernetes dashboard" width="90%">
+  <img src="docs/monitoring-console.png" alt="Grafana Kubernetes dashboard" width="90%">
   <p><b>3. Grafana Kubernetes Dashboard</b></p>
 </div>
 
