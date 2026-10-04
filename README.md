@@ -32,14 +32,8 @@
 
 ## 📸 Project Screenshots
 
-### 🖥️ Live Application
 
-<div align="center">
-  <img src="docs/screenshots/app.png" alt="Application UI" width="90%">
-  <p><i>The Flask application running on the Kind cluster</i></p>
-</div>
 
----
 
 ### 🔁 Part 1 · CI/CD Execution
 
@@ -48,21 +42,21 @@
 <table>
   <tr>
     <td align="center" width="50%">
-      <img src="docs/screenshots/github-webhook.png" alt="GitHub webhook"><br>
+      <img src="docs/jemkins-agent.png" alt="GitHub webhook"><br>
       <b>1. GitHub Webhook Triggers the Build</b>
     </td>
     <td align="center" width="50%">
-      <img src="docs/screenshots/jenkins-agent.png" alt="Jenkins agent"><br>
+      <img src="docs/pipeline-console.png" alt="Jenkins agent"><br>
       <b>2. Jenkins Agent Connected via SSH Keys</b>
     </td>
   </tr>
   <tr>
     <td align="center" width="50%">
-      <img src="docs/screenshots/jenkins-pipeline.png" alt="Jenkins pipeline"><br>
+      <img src="docs/k8s-console.png" alt="Jenkins pipeline"><br>
       <b>3. Pipeline Stages: Build, Push, Deploy, Verify</b>
     </td>
     <td align="center" width="50%">
-      <img src="docs/screenshots/jenkins-console.png" alt="Jenkins console output"><br>
+      <img src="docs/live-ui.png" alt="Jenkins console output"><br>
       <b>4. Console Output: Build Successful</b>
     </td>
   </tr>
