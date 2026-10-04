@@ -36,53 +36,71 @@
 
 <div align="center">
   <img src="docs/screenshots/app.png" alt="Application UI" width="90%">
-  <p><i>The Flask application running on the Kind cluster, updated automatically after a <code>git push</code></i></p>
+  <p><i>The Flask application running on the Kind cluster</i></p>
 </div>
 
-### ⚙️ Under the Hood
+---
+
+### 🔁 Part 1 · CI/CD Execution
+
+> From `git push` to a live deployment, fully automated.
 
 <table>
   <tr>
     <td align="center" width="50%">
-      <img src="docs/screenshots/jenkins-pipeline.png" alt="Jenkins pipeline"><br>
-      <b>Jenkins Pipeline: All Stages Green</b>
+      <img src="docs/screenshots/github-webhook.png" alt="GitHub webhook"><br>
+      <b>1. GitHub Webhook Triggers the Build</b>
     </td>
     <td align="center" width="50%">
       <img src="docs/screenshots/jenkins-agent.png" alt="Jenkins agent"><br>
-      <b>Jenkins Agent Connected via SSH Keys</b>
+      <b>2. Jenkins Agent Connected via SSH Keys</b>
     </td>
   </tr>
   <tr>
     <td align="center" width="50%">
-      <img src="docs/screenshots/github-webhook.png" alt="GitHub webhook"><br>
-      <b>GitHub Webhook: Successful Delivery</b>
+      <img src="docs/screenshots/jenkins-pipeline.png" alt="Jenkins pipeline"><br>
+      <b>3. Pipeline Stages: Build, Push, Deploy, Verify</b>
     </td>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/jenkins-console.png" alt="Jenkins console output"><br>
+      <b>4. Console Output: Build Successful</b>
+    </td>
+  </tr>
+  <tr>
     <td align="center" width="50%">
       <img src="docs/screenshots/kubectl-resources.png" alt="kubectl resources"><br>
-      <b>Pods, Services, Secret and PVC</b>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="50%">
-      <img src="docs/screenshots/monitoring-namespace.png" alt="monitoring namespace"><br>
-      <b><code>monitoring</code> Namespace: Pods, Deployments, Services</b>
-    </td>
-    <td align="center" width="50%">
-      <img src="docs/screenshots/prometheus.png" alt="Prometheus"><br>
-      <b>Prometheus Targets</b>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="50%">
-      <img src="docs/screenshots/grafana-dashboard.png" alt="Grafana dashboard"><br>
-      <b>Grafana Kubernetes Dashboard</b>
+      <b>5. Pods, Services, Secret and PVC Running</b>
     </td>
     <td align="center" width="50%">
       <img src="docs/screenshots/ui-before-after.png" alt="UI before and after"><br>
-      <b>UI Before and After a Push (Auto-Deployed)</b>
+      <b>6. UI Updated Automatically After a Push</b>
     </td>
   </tr>
 </table>
+
+---
+
+### 📊 Part 2 · Monitoring with Prometheus and Grafana
+
+> Real-time visibility into the Kubernetes cluster.
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/monitoring-namespace.png" alt="monitoring namespace"><br>
+      <b>1. <code>monitoring</code> Namespace: Pods, Deployments, Services</b>
+    </td>
+    <td align="center" width="50%">
+      <img src="docs/screenshots/prometheus.png" alt="Prometheus targets"><br>
+      <b>2. Prometheus Collecting Metrics</b>
+    </td>
+  </tr>
+</table>
+
+<div align="center">
+  <img src="docs/screenshots/grafana-dashboard.png" alt="Grafana Kubernetes dashboard" width="90%">
+  <p><b>3. Grafana Kubernetes Dashboard</b></p>
+</div>
 
 ---
 
